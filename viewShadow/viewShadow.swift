@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class viewShadow:UIView {
+open class viewShadow:UIView {
     
     //For top and bottom
-    func addShadow(location: VerticalLocation, color: UIColor = .black, opacity: Float = 0.5, radius: CGFloat = 5.0) {
+   open func addShadow(location: VerticalLocation, color: UIColor = .black, opacity: Float = 0.5, radius: CGFloat = 5.0) {
         switch location {
         case .bottom:
             addShadow(offset: CGSize(width: 0, height: 10), color: color, opacity: opacity, radius: radius)
@@ -20,7 +20,7 @@ class viewShadow:UIView {
             addShadow(offset: CGSize(width: 0, height: -10), color: color, opacity: opacity, radius: radius)
         }
     }
-    func addShadow(offset: CGSize, color: UIColor = .black, opacity: Float = 0.5, radius: CGFloat = 5.0) {
+   open func addShadow(offset: CGSize, color: UIColor = .black, opacity: Float = 0.5, radius: CGFloat = 5.0) {
         self.layer.masksToBounds = false
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = offset
@@ -29,7 +29,7 @@ class viewShadow:UIView {
     }
     
     //For all direction
-    func dropShadow(scale: Bool = true) {
+   open func dropShadow(scale: Bool = true) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
@@ -40,7 +40,7 @@ class viewShadow:UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+   open func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
         layer.masksToBounds = false
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = opacity
@@ -52,7 +52,7 @@ class viewShadow:UIView {
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }
-enum VerticalLocation: String {
+public enum VerticalLocation: String {
     case bottom
     case top
 }
