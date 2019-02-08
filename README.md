@@ -7,3 +7,6 @@ Pods
 ```
 pod 'viewShadow'
 ```
+
+## Useage
+
